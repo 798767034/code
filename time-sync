@@ -1,0 +1,6 @@
+#!/bin/bash
+
+yum isntall ntp
+ntpdate ntp1.aliyun.com
+hwclock --systohc
+
