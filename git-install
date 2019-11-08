@@ -1,0 +1,32 @@
+#!/bin/bash
+
+yum install git
+
+mkdir /root/git_data/
+cd /root/git_data/
+
+git init 1>/dev/null 2>&1
+
+cat /root/.gitconfig <<EOF
+
+[user]
+        name = root
+        email = none
+[credential]
+        helper = store
+[push]
+        default = simple
+EOF
+
+read -p "please input your repository name :" name
+
+echo "# $name" >> README.md
+git init 1>/dev/null 2>&1
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/798767034/$name.git
+git push origin master
+
+
+
+
