@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yum install  -y curl policycoreutils openssh-server openssh-clients postfix
+yum install  -y curl policycoreutils openssh-server openssh-clients postfix git
 
 systemctl enable postfix
 systemctl start postfix
