@@ -1,0 +1,21 @@
+time-sync ipset is commit in Nov.8
+git install code is commit in Nov.8
+gitlab-install code base version is commit in Nov.9
+
+gitlab-install version 0.1
+-------------------------------
+
+add touch /etc/yum/repos.d/giutlab-ce.repo
+
+-------------------------------
+
+gitlab-install version 0.2
+
+-------------------------------
+
+fix some problem 
+
+------------------------------
+
+
+
