@@ -22,7 +22,7 @@ EOF
 
 yum install -y gitlab-ce
 
-read -p "please input your IP address: " IP
+read -p "please input your IP address: " ip
 read -p "please input your port: " port
 
 sed -ie s/gitlab.example.com/$ip:$port/ /etc/gitlab/gitlab.rb
