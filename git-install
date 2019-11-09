@@ -7,11 +7,16 @@ cd /root/git_data/
 
 git init 1>/dev/null 2>&1
 
+read -p "please input your userName: " user
+read -p "please input your password: " passwd
+
+echo "In first time use 'git push origin master' you will input user & password"
+
 cat /root/.gitconfig <<EOF
 
 [user]
-        name = root
-        email = none
+        name = $user
+        email = $passwd
 [credential]
         helper = store
 [push]
