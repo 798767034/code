@@ -20,7 +20,7 @@ gpgkey=https://packages.gitlab.com/gpg.key
 
 EOF
 
-yum install gitlab-ce
+yum install -y gitlab-ce
 
 read -p "please input your IP address: " IP
 read -p "please input your port: " port
