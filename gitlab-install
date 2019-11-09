@@ -1,0 +1,37 @@
+#!/bin/bash
+
+yum install  -y curl policycoreutils openssh-server openssh-clients postfix
+
+systemctl enable postfix
+systemctl start postfix
+
+touch /etc/yum.repos.d/gitlab-ce.repo
+
+
+cat > /etc/yum.repos.d/gitlab-ce.repo <<EOF
+
+[gitlab-ce]
+name=gitlab-ce
+baseurl=http://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/yum/el7
+repo_gpgcheck=0
+gpgcheck=0
+enabled=1
+gpgkey=https://packages.gitlab.com/gpg.key
+
+EOF
+
+yum install gitlab-ce
+
+read -p "please input your IP address: " IP
+read -p "please input your port: " port
+
+sed -ie s/gitlab.example.com/$ip:$port/ /etc/gitlab/gitlab.rb
+
+echo "gitlab install and setting is over,we will start after 3s ..." 
+
+sleep 3
+
+gitlab-ctl start
+gitlab-ctl reconfigure
+
+echo "and In your browser input your IP & port to see gitlab."
